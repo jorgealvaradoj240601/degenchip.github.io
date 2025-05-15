@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DegenChip ($CHIP)</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #1e1e1e;
+      padding: 30px 10px;
+    }
+    header img {
+      width: 100px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #ffd700;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      color: #121212;
+      background-color: #ffd700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #1e1e1e;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="DegenChip Logo" />
+    <h1>DegenChip ($CHIP)</h1>
+    <p>The ultimate casino-inspired memecoin for degens and risk-takers.</p>
+  </header>
+
+  <main>
+    <p><strong>Total Supply:</strong> 777,777,777,777 $CHIP</p>
+    <p><strong>Contract Address:</strong><br />
+      <a href="https://testnet.bscscan.com/token/0x202997174C8F07491Fc7C2392175E63f4202c25D" target="_blank">
+        0x202997174C8F07491Fc7C2392175E63f4202c25D
+      </a>
+    </p>
+
+    <button class="btn" onclick="addToMetaMask()">Add $CHIP to MetaMask</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DegenChip. All rights reserved.</p>
+  </footer>
+
+  <script>
+    async function addToMetaMask() {
+      try {
+        await window.ethereum.request({
+          method: 'wallet_watchAsset',
+          params: {
+            type: 'ERC20',
+            options: {
+              address: '0x202997174C8F07491Fc7C2392175E63f4202c25D',
+              symbol: 'CHIP',
+              decimals: 18,
+              image: 'https://degenchip.io/logo.png'
+            }
+          }
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  </script>
+</body>
+</html>
